@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+<body>
+ <p> Enter the number to be reversed</p>
+    <input type='text' id = 'num'>
+        <button type='submit' onclick='reverse()'>Submit</button>
+        <div id='revNum'></div>
+
+<script>
+// //Using Recursion function
+// var reverse = function reverse(i,num){
+// 	num=num||0;
+// 	if(i<1){
+// 		return num;
+// 	}
+// 	var x=Math.floor(i/10);
+// 	return reverse(x,(num*10)+(i % 10));
+// };
+// document.writeln(reverse(12345));	
+
+var reversal = function reversal(i,num){
+	num=num||0;
+	if(i<1){
+		return num;
+	}
+	var x=Math.floor(i/10);
+	return reversal(x,(num*10)+(i % 10));
+};
+
+  var reverse = function(){
+    var num = document.getElementById('num').value;
+  	//alert(num);
+    //document.getElementById('revNum').innerHTML=num;
+    document.getElementById('revNum').innerHTML=reversal(num);
+};
+
+
+</script>
+</body>
+</html>
