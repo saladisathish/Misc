@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var serial = function(){
+	var prefix='';
+	var seq=0;
+	return {
+		set_prefix: function(a){
+			prefix=String(a);
+		},
+		set_seq: function(s){
+			seq=s;
+		},
+		seq_setter: function(){
+			var uniq=prefix+seq;
+			seq+=1;
+			return uniq;
+	}
+	};
+};
+var seqNum=serial();
+seqNum.set_prefix('S');
+seqNum.set_seq(200);
+var uniNum = seqNum.seq_setter();
+document.writeln(uniNum);
+seqNum.seq_setter();
+document.writeln(uniNum);
+</script>
+</body>
+</html>

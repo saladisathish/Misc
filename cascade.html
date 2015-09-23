@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+	
+	getElement('boxDiv').
+	move(350,100).
+	width(100).
+	height(100).
+	color('red').
+	border('10px outset').
+	padding('4px').
+	appendText("Please Stand by").
+	on('mousedown', function(m){
+		this.startDrag(m,this.getNinth(m));
+	}).
+	on('mousemove','drag').
+	on('mouseup','stopDrag').
+	later(2000,function(){
+		this.
+			color('yellow').
+			setHTML("what hath God wraught?").
+			slide(400,40,200,200);
+	}).
+	tip('this box is resizeable');
+
+</script>
+
+<div id = 'boxDiv'></div>
+</body>
+</html>

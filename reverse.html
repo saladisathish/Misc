@@ -20,19 +20,32 @@
 // document.writeln(reverse(12345));	
 
 var reversal = function reversal(i,num){
+	if(typeof i!=='number'){
+		throw{
+			name: 'TypeError',
+			message: 'Only numbers allowed'
+		};
+	}
+	else{
 	num=num||0;
 	if(i<1){
 		return num;
 	}
 	var x=Math.floor(i/10);
 	return reversal(x,(num*10)+(i % 10));
+	}
 };
 
   var reverse = function(){
     var num = document.getElementById('num').value;
   	//alert(num);
     //document.getElementById('revNum').innerHTML=num;
+    try{
     document.getElementById('revNum').innerHTML=reversal(num);
+	}catch(e){
+		document.getElementById('revNum').innerHTML=e.message;
+	};
+
 };
 
 

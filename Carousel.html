@@ -1,0 +1,71 @@
+<html>
+<head>
+<style>
+.horizontal{
+	width: 400px;
+	position: relative;
+	overflow: hidden;	
+}
+.horizontal .items {
+		width: 2000px;
+		-moz-animation: hscroll 20s infinite;
+		-webkit-animation: hscroll 20s infinite;
+		-ms-animation: hscroll 20s infinite;
+    	animation: hscroll 20s infinite;
+	}
+.horizontal .item {
+	margin: 0;
+	float:left;
+	width:400px;
+	z-index: 1;
+}
+@-webkit-keyframes hscroll{
+	0%,18.75% {margin-left: 0px;}
+	25%, 43.75% {margin-left: -401px;}
+	50%, 68.75% {margin-left: -801px;}
+	75%, 93.75% {margin-left: -1201px;}
+	100% {margin-left: 0px;}
+}
+@-moz-keyframes hscroll{
+	0%,18.75% {margin-left: 0px;}
+	25%, 43.75% {margin-left: -401px;}
+	50%, 68.75% {margin-left: -801px;}
+	75%, 93.75% {margin-left: -1201px;}
+	100% {margin-left: 0px;}
+}
+@-ms-keyframes hscroll{
+	0%,18.75% {margin-left: 0px;}
+	25%, 43.75% {margin-left: -401px;}
+	50%, 68.75% {margin-left: -801px;}
+	75%, 93.75% {margin-left: -1201px;}
+	100% {margin-left: 0px;}
+}
+@keyframes hscroll{
+	0%,18.75% {margin-left: 0px;}
+	25%, 43.75% {margin-left: -401px;}
+	50%, 68.75% {margin-left: -801px;}
+	75%, 93.75% {margin-left: -1201px;}
+	100% {margin-left: 0px;}
+}
+#slide_identifier{
+	height: 10px;
+	margin-top: 450px;
+	margin-left: 200px;
+	background-color: rgb(255,0,0);
+	width: 10px;
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+<div class="horizontal">
+	<div class="items">
+		<img class="item" src='one.png' >
+		<img class="item" src='two.png'>
+		<img class="item" src='three.png'>
+		<img class="item" src='four.png'>
+	</div>
+<div id='slide_identifier'> </div>
+</div>
+</body>
+</html>
